@@ -24,4 +24,9 @@ session = Session()
 # Добавление нового пользователя
 new_user = User(name="Alice", age=25)
 session.add(new_user)
+
+users = session.query(User).all()
+for user in users:
+    print(user.id, user.name, user.age)
+
 session.commit()
